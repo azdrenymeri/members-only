@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   
-  
-  root 'main#index'
+  get 'sessions/new'
+  root 'static_pages#home'
  
   get 'main/index'
 
   # User
   get '/signup', to:"users#new"
-  post '/signup',to:"user#create"
+  post '/signup',to:"users#create"
 
   # Session
   get '/Login', to:"sessions#new"
