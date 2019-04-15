@@ -45,7 +45,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
 end
 
 group :test do
