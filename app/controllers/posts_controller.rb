@@ -31,8 +31,9 @@ class PostsController < ApplicationController
     private
 
         def post_params
-            params.require(:post).permit(:header, :content)
+            params.require(:post).permit(:title, :description)
         end
+        
         def logged_in_user
             unless logged_in?
             store_location

@@ -5,7 +5,8 @@ module SessionsHelper
     end
 
     def current_user
-        if(user_id == session[:user_id])
+        
+        if(user_id = session[:user_id])
             @current_user  ||= User.find(user_id)
         elsif (user_id = cookies.signed[:user_id])
             user = User.find(user_id)

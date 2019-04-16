@@ -4,30 +4,21 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.new(params[:id])
+  end
+  
+
   def create
       @user = User.new(user_params)
 
       if @user.save
-        flash[:success] = "User Created"
+        flash[:success] = "User Successfully created"
         login @user
         redirect_to root_url
       else
         render 'new'
       end
-  end
-
-  def edit
-    @user = User.find(params[:id])
-  end
-
-  def update 
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      flash[:success] = "Profile successfully updated!"
-      redirect_to root_path
-    else
-      render 'edit'
-    end
   end
 
   private
