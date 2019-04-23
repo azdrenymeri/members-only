@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   delete '/logout', to:"sessions#destroy"
  
   # Post
-  resources :posts , only: [:index, :new, :create, :destroy]
+  resources :posts , only: [:index, :new, :create, :destroy,:show]
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
