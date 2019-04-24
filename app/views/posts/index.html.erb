@@ -9,6 +9,8 @@
     <p class="card-text"><%= p.description %></p>
     <% if p.user_id == current_user.id%>
     <%= link_to "Delete", post_path(p.id),class:"btn btn-outline-danger",method:"DELETE" %>
+    <%= link_to "Show", post_path(p.id),class:"btn btn-outline-danger",method:"SHOW" %>
+    <%= link_to "Edit", post_path(p.id),class:"btn btn-outline-danger",method:"EDIT" %>
     <% end %>
   </div>
 </div>
