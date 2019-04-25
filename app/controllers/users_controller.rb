@@ -16,9 +16,10 @@ class UsersController < ApplicationController
 
       if @user.save
         flash[:success] = "User Successfully created"
-        login @user
+         session[:user_id] = @user.id
         redirect_to root_url
       else
+        flash[:danger] = "Somthing went wrong"
         render 'new'
       end
   end

@@ -1,0 +1,19 @@
+
+<h1> Edit a post </h1>
+<%= form_for @post do |f| %>
+
+    <%= render 'shared/post_errors' %>
+
+    <div class="form-group">
+        <%= f.text_field :title, class: 'form-control', placeholder: "Title" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.text_area :description, class: 'form-control', placeholder: "Description" %>
+    </div>
+
+    <%= f.submit "Edit",method:"PUT", class: 'btn btn-primary btn-lg btn-block' %>
+
+<% end %>
+<br/>
+<%= link_to "Back",posts_path, class:"btn btn-success" %>

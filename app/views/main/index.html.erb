@@ -1,4 +1,8 @@
 
+<% if @current_user %>
+  <p> <%= current_user.email %></p>
+<% end %>
+
 <div class="jumbotron">
   <h1 class="display-3">Welcome to Secret Club!</h1>
   <p class="lead">You do not talk about secret club.</p>

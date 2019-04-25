@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
-    before_action :logged_in_user, except: [:index, :show]
-    before_action :correct_user, only: [:edit, :update, :destroy, :show]
-  
+    before_action :current_user
 
     def index
         @posts = Post.order(updated_at: :desc) 
