@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-    attr_accessor :remember_token
-
+    
     has_many :posts
     
     before_save :downcase_email
@@ -17,7 +16,11 @@ class User < ApplicationRecord
     before_create{generate_token(:auth_token)}
 
 
-
+    def self.find_by_auth_token(cookie)
+       user =  User.where(:auth_token => cookie).first
+        byebug
+        user 
+    end
 
     def generate_token(column)
         begin 
