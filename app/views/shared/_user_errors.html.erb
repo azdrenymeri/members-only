@@ -1,0 +1,10 @@
+<% if @user.errors.any? %>
+<div class="card text-white bg-danger" style="margin:10px;">
+  <h4 class="card-header">Error</h4>
+  <div class="card-body">
+     <% @user.errors.full_messages.each do |msg| %>
+            <p><%= msg %></p>
+        <% end %>
+  </div>
+</div>
+<% end %>

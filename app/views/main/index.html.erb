@@ -1,0 +1,13 @@
+
+<% if @current_user %>
+  <p> <%= current_user.email %></p>
+<% end %>
+
+<div class="jumbotron">
+  <h1 class="display-3">Welcome to Secret Club!</h1>
+  <p class="lead">You do not talk about secret club.</p>
+  <hr class="my-4">
+  <p class="lead">
+    <%= link_to "View posts", posts_path, class:"btn btn-secondary btn-lg" %>
+  </p>
+</div>

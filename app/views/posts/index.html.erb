@@ -1,0 +1,30 @@
+<h1>Posts</h1>
+<% if current_user %>
+    <%= link_to "Create a New Post", new_post_path ,class:"btn btn-success" %>
+    <% @posts.each do |p|%>
+<div class="card bg-light mb-3" style="margin:10px;">
+  <h4 class="card-header"><%= p.title %></h4>
+  <div class="card-body">
+    <p class="card-title">Post By <%= p.user.name %></p>
+    <p class="card-text"><%= p.description %></p>
+    <% if p.user_id == current_user.id%>
+    <%= link_to "Delete", post_path(p.id),class:"btn btn-outline-danger",method:"DELETE",data:{confirm:"Are you sure ?"} %>
+    <%= link_to "Show", post_path(p),class:"btn btn-outline-danger" %>
+    <%= link_to "Edit", edit_post_path(p),class:"btn btn-outline-danger" %>
+    <% end %>
+  </div>
+</div>
+    <% end %>
+
+<% else %>
+    <% @posts.each do |p|%>
+<div class="card bg-light mb-3" style="margin:10px;">
+  <h4 class="card-header"><%= p.title %></h4>
+  <div class="card-body">
+    <p class="card-title">SECRET</p>
+    <p class="card-text"><%= p.description %></p>
+  </div>
+</div>
+    <% end %>
+
+<% end %>

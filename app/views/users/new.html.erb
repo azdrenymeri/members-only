@@ -1,0 +1,23 @@
+<%= form_for(@user, url: signup_path,method:'POST') do |f| %>
+    
+    <%= render 'shared/user_errors' %>
+    
+    <div class="form-group">
+        <%= f.text_field :name, class: 'form-control', placeholder: "Your name" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.email_field :email, class: 'form-control', placeholder: "Your email"  %>
+    </div>
+
+    <div class="form-group">
+        <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Password confirmation" %>
+    </div>
+
+    <%= f.submit "Submit", class: 'btn btn-primary btn-lg btn-block' %>
+    
+    <% end %>

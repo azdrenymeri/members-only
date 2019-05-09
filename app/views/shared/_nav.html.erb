@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- <a class="navbar-brand" href="#">Secret Club</a> -->
+  <%= link_to "Secret Club",root_url,class:"navbar-brand"%>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+
+    <div class=" my-2 my-lg-0">
+    <% if current_user %>
+
+    <ul class="nav navbar-nav right">
+
+      <li class="nav-item">
+        <%= link_to current_user.name,profile_path,class:"nav-link active" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Create Post", new_post_path ,class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Log out", logout_path ,class:"nav-link",method:"DELETE" %>
+      </li>
+    </ul>
+
+    <% else %>
+    <ul class="nav navbar-nav right">
+      <li class="nav-item">
+       <%= link_to "Sign-up",signup_path,class:"navbar-brand"%>
+      </li>
+      <li class="nav-item">
+       <%= link_to "Login",login_path,class:"navbar-brand"%>
+      </li>
+    </ul>
+
+    <% end %>
+    </div>
+
+  </div>
+
+</nav>
