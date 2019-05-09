@@ -18,7 +18,6 @@ class User < ApplicationRecord
 
     def self.find_by_auth_token(cookie)
        user =  User.where(:auth_token => cookie).first
-        byebug
         user 
     end
 
